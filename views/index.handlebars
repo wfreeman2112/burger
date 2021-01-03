@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            burger picture
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+
+                <li>{{burger_name}} <button class="devouredbtn">devour it!</button> </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+        <div class="col-sm-6">
+
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+
+                <li>{{burger_name}} <button class="devouredbtn">devour it!</button> </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <textarea name="" id="burgerName" cols="30" rows="10"></textarea>
+            <button class="addBurger">add the burger you would like to eat!</button>
+        </div>
+    </div>
+</div>
