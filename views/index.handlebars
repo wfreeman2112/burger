@@ -10,7 +10,9 @@
                 {{#each burgers}}
                 {{#unless devoured}}
 
-                <li>{{burger_name}} <button class="devouredbtn">devour it!</button> </li>
+                <li>{{burger_name}} <button 
+                data-id = {{id}}
+                class="devouredbtn">devour it!</button> </li>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -22,7 +24,7 @@
                 {{#each burgers}}
                 {{#if devoured}}
 
-                <li>{{burger_name}} <button class="devouredbtn">devour it!</button> </li>
+                <li>{{burger_name}}</li>
                 {{/if}}
                 {{/each}}
             </ul>
@@ -33,9 +35,12 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-
-            <textarea name="" id="burgerName" cols="30" rows="10"></textarea>
-            <button class="addBurger">add the burger you would like to eat!</button>
+   {{!-- making post request using form tag without JS      --}}
+         <form action = "/" method = "POST">
+               <textarea name="burger_name" id="burgerName" cols="30" rows="10"></textarea>
+            <input type = "submit" class="addBurger">add the burger you would like to eat!</input>
+         </form>
+          
         </div>
     </div>
 </div>

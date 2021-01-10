@@ -13,22 +13,23 @@ router.get("/", function(req, res){
     });
 });
 
-//for insertOne am I using "put"?
+
 router.post("/", function(req, res){
-    burger.insertOne(function (burgerDb){
-        res.render("index", {
-            burgers: burgerDb
-        })
+     
+    burger.insertOne(["burger_name", "devoured"],
+    [req.body.burger_name, false], function (burgerDb){
+//   redirect is a get request      
+        res.redirect("/")
     });
 });
   
 
 //for Update am I using put?
 router.put("/api/burgers/:id", function(req, res){
-    burger.updateOne(function (burgerDb){
-        res.render("index", {
-            burgers: burgerDb
-        })
+    var id = req.params.id
+    
+    burger.updateOne(["devoured", "id"], [req.body.devoured, id], function (burgerDb){
+        res.json(burgerDb)
     });
 });
 module.exports = router
