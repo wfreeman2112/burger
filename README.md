@@ -7,4 +7,4 @@ This application is designed using front and back end technology communicating t
 This app requires installation of express, express-handlebars, MySQL and Inquirer
 
 #heroku website
-The app is deployed at 
+The app is deployed at https://agile-inlet-80683.herokuapp.com/
