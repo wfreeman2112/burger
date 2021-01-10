@@ -1,6 +1,17 @@
 //set up dependencies
 var express = require("express");
 var mysql = require("mysql");
+if (process.env.JAWSDB_URL) {
+  var connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  const connection = mysql.createConnection({
+    host: "localhost",
+    PORT: 3306,
+    user: "root",
+    password: "password1",
+    database: "burgers_DB",
+  });
+}
  
  
 //db.json to store and retrieve notes
