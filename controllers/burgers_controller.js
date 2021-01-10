@@ -24,7 +24,7 @@ router.post("/", function(req, res){
 });
   
 
-//for Update am I using put?
+//updating id for devouring
 router.put("/api/burgers/:id", function(req, res){
     var id = req.params.id
     
