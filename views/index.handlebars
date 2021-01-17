@@ -1,33 +1,45 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            burger picture
+            <img class="burgerPic" src="/public/assets/images/burger.png" alt="hamburger">
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6">
-            <ul>
+        <div class="col-sm-4">
+            
                 {{#each burgers}}
                 {{#unless devoured}}
 
-                <li>{{burger_name}} <button 
-                data-id = {{id}}
-                class="devouredbtn">devour it!</button> </li>
+                <p>{{burger_name}}  </p>
                 {{/unless}}
                 {{/each}}
-            </ul>
+            
 
         </div>
-        <div class="col-sm-6">
 
-            <ul>
+        <div class="col-sm-4">
+            
+                {{#each burgers}}
+                {{#unless devoured}}
+            <p>
+            <button 
+                data-id = {{id}}
+                class="devouredbtn">devour it!</button>
+            </p>
+                {{/unless}}
+                {{/each}}
+            
+        </div>
+        <div class="col-sm-4">
+
+            
                 {{#each burgers}}
                 {{#if devoured}}
 
-                <li>{{burger_name}}</li>
+                <p>{{burger_name}}</p>
                 {{/if}}
                 {{/each}}
-            </ul>
+            
 
 
         </div>
@@ -37,8 +49,9 @@
         <div class="col-sm-12">
    {{!-- making post request using form tag without JS      --}}
          <form action = "/" method = "POST">
-               <textarea name="burger_name" id="burgerName" cols="30" rows="10"></textarea>
-            <input type = "submit" class="addBurger">add the burger you would like to eat!</input>
+               <textarea name="burger_name" id="burgerName" cols="31" rows="2"></textarea>
+               <br>
+            <input type = "submit" class="addBurger"> add the burger you would like to eat!</input>
          </form>
           
         </div>

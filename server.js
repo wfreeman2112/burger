@@ -8,7 +8,7 @@ var PORT = process.env.PORT || 3000;
 
 
 //creating public folder/URL paths
-app.use(express.static("public"));
+app.use("/public", express.static("public"));
 
 //data parsing from client
 app.use(express.urlencoded({extended:true}))
